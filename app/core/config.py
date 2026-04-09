@@ -10,9 +10,10 @@ class Settings(BaseSettings):
     SECRET_KEY: str                        # for signing sessions/tokens
 
     # ── Database ──────────────────────────────────
-    DATABASE_URL: str                      # postgresql+asyncpg://...
+    DATABASE_URL: str                
 
     # ── MikroTik ──────────────────────────────────
+    MIKROTIK_HOST: str
     MIKROTIK_DEFAULT_PORT: int = 8728
     MIKROTIK_DEFAULT_USER: str = "api_user"
 

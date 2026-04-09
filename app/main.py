@@ -9,6 +9,7 @@ from app.core.config import settings
 from app.core.logging import setup_logging
 from app.db.database import engine, Base
 from app.routers.router import router as router_router
+from app.routers.mikrotik import router as mikrotik_router
 
 
 logger = logging.getLogger(__name__)
@@ -37,6 +38,7 @@ app = FastAPI(
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(router_router)
+app.include_router(mikrotik_router)
 
 
 @app.get("/health")
