@@ -20,6 +20,7 @@ async def lifespan(app: FastAPI):
     setup_logging(debug=settings.DEBUG)
 
     async with engine.begin() as conn:
+        from app.models import Router, Plan
         await conn.run_sync(Base.metadata.create_all)
 
     logger.info(f"Application started | debug={settings.DEBUG}")
